@@ -6,7 +6,7 @@
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%
   request.setCharacterEncoding("UTF-8");
-%>
+%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,11 +41,11 @@
 	<td width="5%">${articleNum.count}</td>
 	<td width="10%">${article.id }</td>
 	<td align='left'  width="35%">
-	  <span style="padding-right:30px"></span>
+	    <span style="padding-right:30px"></span>     
 	   <c:choose>
 	      <c:when test='${article.level > 1 }'>  
 	         <c:forEach begin="1" end="${article.level }" step="1">
-	              <span style="padding-left:20px"></span>    
+	              <span style="padding-left:10px"></span>    
 	         </c:forEach>
 	         <span style="font-size:12px;">[답변]</span>
                    <a class='cls1' href="${contextPath}/board/viewArticle.do?articleNO=${article.articleNO}">${article.title}</a>
@@ -61,6 +61,6 @@
      </c:when>
     </c:choose>
 </table>
-<a  class="cls1"  href="#"><p class="cls2">글쓰기</p></a>
+<a  class="cls1"  href="${contextPath}/board/articleForm.do"><p class="cls2">글쓰기</p></a>
 </body>
 </html>
